@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Gallery</title>
+<meta name="description" content="A collection of original paintings." />
+<meta name="theme-color" content="#1a1712" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,400;1,9..144,600&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <p class="eyebrow">Est. 2026 — Private Collection</p>
+  <h1 class="site-title">Mugdha's&nbsp;Art Gallery</h1>
+  <p class="site-sub">Original paintings, catalogued and hung as they're finished.</p>
+</header>
+
+<main>
+  <section id="wall" class="wall" aria-label="Painting collection">
+    <!-- Painting cards are injected here by script.js -->
+  </section>
+
+  <p id="empty-state" class="empty-state" hidden>
+    Nothing on the wall yet. Log in at <a href="admin/">/admin</a> to hang the first painting.
+  </p>
+</main>
+
+<footer class="site-footer">
+  <span>© <span id="year"></span> The Gallery</span>
+  <a href="admin/" class="admin-link">Owner login</a>
+</footer>
+
+<!-- Lightbox / spotlight view -->
+<div id="lightbox" class="lightbox" hidden>
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close">✕</button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous painting">‹</button>
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next painting">›</button>
+
+  <figure class="lightbox-figure">
+    <img id="lightbox-img" src="" alt="" />
+    <figcaption class="plaque">
+      <span class="plaque-catalog" id="lightbox-catalog"></span>
+      <span class="plaque-title" id="lightbox-title"></span>
+      <span class="plaque-meta" id="lightbox-meta"></span>
+      <p class="plaque-desc" id="lightbox-desc"></p>
+    </figcaption>
+  </figure>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

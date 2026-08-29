@@ -1,0 +1,7 @@
+name = "gallery-oauth"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# Set these as secrets, not here in plain text:
+#   npx wrangler secret put GITHUB_CLIENT_ID
+#   npx wrangler secret put GITHUB_CLIENT_SECRET

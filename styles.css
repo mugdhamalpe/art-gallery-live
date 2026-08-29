@@ -1,0 +1,260 @@
+/* ---------- Tokens ---------- */
+:root {
+  --wall: #DCD8CF;
+  --wall-deep: #17140F;
+  --ink: #232220;
+  --canvas: #F7F5F0;
+  --brass: #9C7A44;
+  --brass-bright: #C6A05E;
+  --rule: #6B6255;
+  --rule-soft: rgba(35, 34, 32, 0.18);
+
+  --display: 'Fraunces', serif;
+  --body: 'Work Sans', sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--wall);
+  color: var(--ink);
+  font-family: var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+/* ---------- Header ---------- */
+.site-header {
+  padding: 4.5rem 1.5rem 3rem;
+  text-align: center;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin: 0 0 1.1rem;
+}
+
+.site-title {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2.6rem, 8vw, 4.6rem);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.site-sub {
+  font-size: 0.98rem;
+  color: var(--rule);
+  max-width: 32ch;
+  margin: 1rem auto 0;
+  line-height: 1.5;
+}
+
+/* ---------- Wall (gallery grid) ---------- */
+.wall {
+  columns: 1;
+  column-gap: 1.5rem;
+  padding: 3rem 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 620px) {
+  .wall { columns: 2; padding: 3.5rem 2rem; }
+}
+
+@media (min-width: 980px) {
+  .wall { columns: 3; column-gap: 2rem; padding: 4rem 2.5rem; }
+}
+
+.frame {
+  break-inside: avoid;
+  margin: 0 0 1.5rem;
+  background: var(--canvas);
+  padding: 0.7rem 0.7rem 0;
+  border: 1px solid var(--rule-soft);
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.frame:hover,
+.frame:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px -18px rgba(23, 20, 15, 0.45);
+}
+
+.frame:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+}
+
+.frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.frame .label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.75rem 0.15rem 0.9rem;
+  border-top: 1px dashed var(--rule-soft);
+  margin-top: 0.7rem;
+}
+
+.label .title {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.label .catalog {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--brass);
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--rule);
+  padding: 2rem 1.5rem 5rem;
+  font-size: 0.95rem;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--rule);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.admin-link {
+  text-decoration: none;
+  border-bottom: 1px solid var(--brass);
+  color: var(--brass);
+  padding-bottom: 1px;
+}
+
+.admin-link:hover { color: var(--brass-bright); }
+
+/* ---------- Lightbox (spotlight view) ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: var(--wall-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.25rem 2rem;
+  z-index: 100;
+  animation: fade-in 0.2s ease;
+}
+
+.lightbox[hidden] { display: none; }
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-figure {
+  margin: 0;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.lightbox-figure img {
+  max-width: 100%;
+  max-height: 62vh;
+  object-fit: contain;
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6);
+}
+
+.plaque {
+  margin-top: 1.75rem;
+  color: #EFEAE0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.plaque-catalog {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--brass-bright);
+  text-transform: uppercase;
+}
+
+.plaque-title {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.4rem;
+}
+
+.plaque-meta {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: #A9A296;
+}
+
+.plaque-desc {
+  max-width: 46ch;
+  font-size: 0.9rem;
+  color: #C9C3B6;
+  line-height: 1.5;
+  margin: 0.4rem 0 0;
+}
+
+.lightbox-close,
+.lightbox-nav {
+  position: absolute;
+  background: none;
+  border: none;
+  color: #EFEAE0;
+  cursor: pointer;
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: 0.6rem;
+}
+
+.lightbox-close { top: 1.25rem; right: 1.25rem; }
+.lightbox-nav { top: 50%; transform: translateY(-50%); font-size: 2.4rem; }
+.lightbox-prev { left: 0.5rem; }
+.lightbox-next { right: 0.5rem; }
+
+.lightbox-close:hover,
+.lightbox-nav:hover { color: var(--brass-bright); }
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .frame, .lightbox { transition: none; animation: none; }
+}

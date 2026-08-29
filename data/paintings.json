@@ -1,0 +1,31 @@
+{
+  "paintings": [
+    {
+      "title": "Morning, Unfinished",
+      "year": "2023",
+      "medium": "Oil on canvas",
+      "dimensions": "61 × 76 cm",
+      "catalogNumber": "001",
+      "image": "images/paintings/sample-1.jpg",
+      "description": "Placeholder entry — replace with your own painting from the admin panel."
+    },
+    {
+      "title": "Quiet Harbour",
+      "year": "2023",
+      "medium": "Acrylic on board",
+      "dimensions": "40 × 50 cm",
+      "catalogNumber": "002",
+      "image": "images/paintings/sample-2.jpg",
+      "description": "Placeholder entry — replace with your own painting from the admin panel."
+    },
+    {
+      "title": "Field Study No. 3",
+      "year": "2022",
+      "medium": "Watercolour on paper",
+      "dimensions": "30 × 42 cm",
+      "catalogNumber": "003",
+      "image": "images/paintings/sample-3.jpg",
+      "description": "Placeholder entry — replace with your own painting from the admin panel."
+    }
+  ]
+}
